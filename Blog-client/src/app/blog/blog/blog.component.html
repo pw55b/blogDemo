@@ -1,0 +1,54 @@
+<nz-layout id="layout">
+  <nz-header id="header">
+    <div class="wrapper">
+      <a [routerLink]="['/blog/post-list']">
+        <div class="name">xiule.fun</div>
+      </a>
+      <ul class="menu" nz-menu nzTheme="dark" nzMode="horizontal">
+        <!-- <li nz-submenu nzTitle="分类">
+          <ul >
+            <li nz-menu-group >
+              <ul>
+                <li nz-menu-item>123123</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li nz-menu-item>标签</li>
+        <li nz-menu-item>归档</li> -->
+      </ul>
+      <!-- search -->
+      <div id="searchbox">
+        <!-- <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+          <input type="text" nz-input placeholder="input search text" />
+        </nz-input-group> -->
+      </div>
+    </div>
+  </nz-header>
+  <nz-content>
+    <div class="inner-content" nz-row>
+      <div nz-col nzSpan="17">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="right" nz-col nzSpan="6" nzOffset="1">
+        <nz-card nzTitle="公告">
+          <p>这个人很懒，什么都没有留下</p>
+        </nz-card>
+        <br>
+        <br>
+        <div class="card">
+          <div class="card-header">分类</div>
+          <a class="list-group-item" *ngFor="let item of categories">{{item.name}}</a>
+        </div>
+      </div>
+    </div>
+  </nz-content>
+  <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+</nz-layout>
+<ng-template #suffixIconButton>
+  <button class="search" nz-button nzType="default" nzSearch><i nz-icon nzType="search"></i></button>
+</ng-template>
+<button id="signOut" nz-button nzType="primary" nzShape="circle" (click)="openIdConnectService.triggerSignOut()" *ngIf='openIdConnectService.userAvailable'><i
+    nz-icon nzType="logout" nzTheme="outline"></i></button>
+<button id="write" nz-button nzType="primary" nzShape="circle" [routerLink]="['/blog/write-post']" *ngIf='openIdConnectService.userAvailable'
+  routerLinkActive="router-link-active" nzDanger><i nz-icon nzType="plus" nzTheme="outline"></i></button>

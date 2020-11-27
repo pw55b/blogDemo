@@ -1,0 +1,9 @@
+E:\vs项目\blog3.1\Blog.APi\Blog.Core\bin\Debug\netcoreapp3.1\Blog.Core.deps.json
+E:\vs项目\blog3.1\Blog.APi\Blog.Core\bin\Debug\netcoreapp3.1\Blog.Core.dll
+E:\vs项目\blog3.1\Blog.APi\Blog.Core\bin\Debug\netcoreapp3.1\Blog.Core.pdb
+E:\vs项目\blog3.1\Blog.APi\Blog.Core\obj\Debug\netcoreapp3.1\Blog.Core.AssemblyInfoInputs.cache
+E:\vs项目\blog3.1\Blog.APi\Blog.Core\obj\Debug\netcoreapp3.1\Blog.Core.AssemblyInfo.cs
+E:\vs项目\blog3.1\Blog.APi\Blog.Core\obj\Debug\netcoreapp3.1\Blog.Core.dll
+E:\vs项目\blog3.1\Blog.APi\Blog.Core\obj\Debug\netcoreapp3.1\Blog.Core.pdb
+E:\vs项目\blog3.1\Blog.APi\Blog.Core\obj\Debug\netcoreapp3.1\Blog.Core.csprojAssemblyReference.cache
+E:\vs项目\blog3.1\Blog.APi\Blog.Core\obj\Debug\netcoreapp3.1\Blog.Core.csproj.CoreCompileInputs.cache

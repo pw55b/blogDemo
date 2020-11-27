@@ -1,0 +1,34 @@
+
+<h2>新增博文</h2>
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submit()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="24">标题：</nz-form-label>
+    <nz-form-control nzHasFeedback  [nzErrorTip]="titleTpl">
+        <!-- [ngModel]="'MaxLength is 12 and MinLength is 6'"  -->
+      <input nz-input  placeholder="最大长度50"  formControlName="title" minlength="5" maxlength="50"
+        required />
+      <ng-template #titleTpl let-control>
+        <ng-container *ngIf="control.hasError('maxlength')">标题最大长度50</ng-container>
+        <ng-container *ngIf="control.hasError('minlength')">标题最小长度5</ng-container>
+        <ng-container *ngIf="control.hasError('required')">标题不能为空</ng-container>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="24" nzFor="email">正文：</nz-form-label>
+    <nz-form-control nzHasFeedback  [nzErrorTip]="contentTpl">
+      <editor apiKey="wyltirorv95hhnc738espvp9mblu845ss7wx561z02mthcjx" [init]="editorSettings"
+      formControlName="content" required>
+      </editor>
+      <ng-template #contentTpl let-control>
+        <ng-container *ngIf="control.hasError('required')">正文不能为空</ng-container>
+        <ng-container *ngIf="control.hasError('minlength')">正文最小长度50</ng-container>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzOffset]="22" [nzSpan]="2">
+      <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

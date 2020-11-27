@@ -1,0 +1,1247 @@
+2020-11-25 09:57:40.926 +08:00 [INF] Hello, world!
+2020-11-25 09:57:41.869 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 09:57:42.179 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 09:57:42.181 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 09:57:42.183 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 09:57:42.184 +08:00 [INF] Hosting environment: Development
+2020-11-25 09:57:42.185 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 13:36:02.201 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 13:36:02.223 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 13:36:02.235 +08:00 [INF] No saved response found in store.
+2020-11-25 13:36:02.236 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 13:36:02.242 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 13:36:02.244 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 13:36:02.245 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 13:36:03.282 +08:00 [INF] Successfully validated the token.
+2020-11-25 13:36:03.290 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 13:36:03.361 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 13:36:04.596 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 13:36:05.431 +08:00 [INF] Executed DbCommand (65ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 13:36:05.596 +08:00 [INF] Executed DbCommand (71ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 13:36:05.735 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 13:36:05.851 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 2480.6201ms
+2020-11-25 13:36:05.856 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 13:36:05.860 +08:00 [INF] Generating expiration headers.
+2020-11-25 13:36:05.863 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 05:37:05 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 13:36:05.869 +08:00 [INF] Generating Validation headers.
+2020-11-25 13:36:05.877 +08:00 [INF] Validation headers generated. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6". Last-Modified: Wed, 25 Nov 2020 05:36:05 GMT
+2020-11-25 13:36:05.881 +08:00 [INF] Generating Vary header.
+2020-11-25 13:36:05.883 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 13:36:05.908 +08:00 [INF] Request finished in 3711.213ms 200 application/json; charset=utf-8
+2020-11-25 13:40:27.354 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 13:40:27.358 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 13:40:27.361 +08:00 [INF] Checking If-None-Match.
+2020-11-25 13:40:27.362 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 13:40:27.366 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 13:40:27.369 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 13:40:27.379 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:36:05 GMT.
+2020-11-25 13:40:27.383 +08:00 [INF] Request finished in 29.4218ms 304 
+2020-11-25 13:57:51.967 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 13:57:51.974 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 13:57:51.976 +08:00 [INF] Checking If-None-Match.
+2020-11-25 13:57:51.979 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 13:57:51.981 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 13:57:51.986 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 13:57:51.991 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:36:05 GMT.
+2020-11-25 13:57:51.995 +08:00 [INF] Request finished in 27.9452ms 304 
+2020-11-25 13:59:52.100 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 13:59:52.105 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 13:59:52.108 +08:00 [INF] Checking If-None-Match.
+2020-11-25 13:59:52.112 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 13:59:52.115 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 13:59:52.127 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 13:59:52.130 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:36:05 GMT.
+2020-11-25 13:59:52.133 +08:00 [INF] Request finished in 34.2505ms 0 
+2020-11-25 13:59:52.281 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 13:59:52.286 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 13:59:52.288 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-25 13:59:52.290 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 13:59:52.294 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 13:59:52.295 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 13:59:52.297 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 13:59:52.303 +08:00 [INF] Successfully validated the token.
+2020-11-25 13:59:52.305 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 13:59:52.307 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 13:59:52.369 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 13:59:52.393 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 13:59:52.404 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 13:59:52.416 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 13:59:52.421 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 107.028ms
+2020-11-25 13:59:52.447 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 13:59:52.450 +08:00 [INF] Generating expiration headers.
+2020-11-25 13:59:52.453 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 06:00:52 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 13:59:52.458 +08:00 [INF] Generating Validation headers.
+2020-11-25 13:59:52.471 +08:00 [INF] Validation headers generated. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6". Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT
+2020-11-25 13:59:52.473 +08:00 [INF] Generating Vary header.
+2020-11-25 13:59:52.474 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 13:59:52.477 +08:00 [INF] Request finished in 195.8216ms 200 application/json; charset=utf-8
+2020-11-25 14:00:54.061 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 14:00:54.069 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 14:00:54.080 +08:00 [INF] Checking If-None-Match.
+2020-11-25 14:00:54.085 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:00:54.087 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:00:54.089 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 14:00:54.096 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 14:00:54.100 +08:00 [INF] Request finished in 39.1191ms 304 
+2020-11-25 14:02:12.074 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 14:02:12.082 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 14:02:12.085 +08:00 [INF] Checking If-None-Match.
+2020-11-25 14:02:12.087 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:02:12.091 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:02:12.095 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 14:02:12.099 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 14:02:12.104 +08:00 [INF] Request finished in 29.5244ms 304 
+2020-11-25 14:04:11.620 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 14:04:11.624 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 14:04:11.627 +08:00 [INF] Checking If-None-Match.
+2020-11-25 14:04:11.628 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:04:11.631 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:04:11.633 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 14:04:11.635 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 14:04:11.639 +08:00 [INF] Request finished in 19.1907ms 304 
+2020-11-25 14:05:19.958 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 14:05:19.961 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 14:05:19.962 +08:00 [INF] Checking If-None-Match.
+2020-11-25 14:05:19.964 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:05:19.966 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:05:19.968 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 14:05:19.971 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 14:05:19.974 +08:00 [INF] Request finished in 16.5243ms 304 
+2020-11-25 14:06:42.841 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 14:06:42.846 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 14:06:42.848 +08:00 [INF] Checking If-None-Match.
+2020-11-25 14:06:42.850 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:06:42.853 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:06:42.855 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 14:06:42.857 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 14:06:42.860 +08:00 [INF] Request finished in 18.8148ms 304 
+2020-11-25 14:07:48.849 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 14:07:48.853 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 14:07:48.855 +08:00 [INF] Checking If-None-Match.
+2020-11-25 14:07:48.858 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:07:48.862 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:07:48.863 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 14:07:48.866 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 14:07:48.869 +08:00 [INF] Request finished in 20.2087ms 304 
+2020-11-25 14:18:33.095 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 14:18:33.098 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 14:18:33.100 +08:00 [INF] Checking If-None-Match.
+2020-11-25 14:18:33.101 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:18:33.103 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:18:33.106 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 14:18:33.109 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 14:18:33.113 +08:00 [INF] Request finished in 17.2426ms 304 
+2020-11-25 14:19:35.511 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 14:19:35.514 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 14:19:35.516 +08:00 [INF] Checking If-None-Match.
+2020-11-25 14:19:35.520 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:19:35.523 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:19:35.525 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 14:19:35.527 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 14:19:35.530 +08:00 [INF] Request finished in 19.6399ms 304 
+2020-11-25 14:22:29.840 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 14:22:29.844 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 14:22:29.846 +08:00 [INF] Checking If-None-Match.
+2020-11-25 14:22:29.848 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:22:29.852 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:22:29.855 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 14:22:29.858 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 14:22:29.865 +08:00 [INF] Request finished in 25.1622ms 304 
+2020-11-25 14:25:41.346 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 14:25:41.348 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 14:25:41.350 +08:00 [INF] Checking If-None-Match.
+2020-11-25 14:25:41.351 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:25:41.353 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 14:25:41.354 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 14:25:41.357 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 14:25:41.359 +08:00 [INF] Request finished in 13.6648ms 304 
+2020-11-25 17:19:09.603 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 17:19:09.611 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 17:19:09.613 +08:00 [INF] Checking If-None-Match.
+2020-11-25 17:19:09.615 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 17:19:09.617 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 17:19:09.619 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 17:19:09.621 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 17:19:09.626 +08:00 [INF] Request finished in 22.4677ms 304 
+2020-11-25 17:24:36.746 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 17:24:36.752 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 17:24:36.755 +08:00 [INF] Checking If-None-Match.
+2020-11-25 17:24:36.756 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 17:24:36.758 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 17:24:36.759 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 17:24:36.760 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 17:24:36.762 +08:00 [INF] Request finished in 15.6909ms 304 
+2020-11-25 18:01:17.448 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 18:01:17.453 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:01:17.455 +08:00 [INF] Checking If-None-Match.
+2020-11-25 18:01:17.458 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 18:01:17.459 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 18:01:17.461 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 18:01:17.463 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 18:01:17.467 +08:00 [INF] Request finished in 19.2851ms 304 
+2020-11-25 18:03:08.413 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 18:03:08.416 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:03:08.426 +08:00 [INF] Checking If-None-Match.
+2020-11-25 18:03:08.427 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 18:03:08.429 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 18:03:08.430 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 18:03:08.432 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 05:59:52 GMT.
+2020-11-25 18:03:08.434 +08:00 [INF] Request finished in 21.0909ms 304 
+2020-11-25 18:15:13.245 +08:00 [INF] Application is shutting down...
+2020-11-25 18:17:40.994 +08:00 [INF] Hello, world!
+2020-11-25 18:17:42.028 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 18:17:42.310 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 18:17:42.312 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 18:17:42.314 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 18:17:42.316 +08:00 [INF] Hosting environment: Development
+2020-11-25 18:17:42.318 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 18:19:05.236 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 18:19:05.255 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:19:05.263 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-25 18:19:05.264 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 18:19:05.269 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 18:19:05.271 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 18:19:05.272 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 18:19:06.096 +08:00 [INF] Successfully validated the token.
+2020-11-25 18:19:06.104 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 18:19:06.160 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 18:19:07.209 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 18:19:08.072 +08:00 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 18:19:08.276 +08:00 [INF] Executed DbCommand (77ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 18:19:08.430 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 18:19:08.490 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 2318.6554ms
+2020-11-25 18:19:08.493 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 18:19:08.500 +08:00 [INF] Generating expiration headers.
+2020-11-25 18:19:08.503 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 10:20:08 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 18:19:08.508 +08:00 [INF] Generating Validation headers.
+2020-11-25 18:19:08.521 +08:00 [INF] Validation headers generated. ETag: Strong, "70944D087E4CCF118FB2192A21D9DC9B". Last-Modified: Wed, 25 Nov 2020 10:19:08 GMT
+2020-11-25 18:19:08.524 +08:00 [INF] Generating Vary header.
+2020-11-25 18:19:08.526 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 18:19:08.546 +08:00 [INF] Request finished in 3314.7958ms 200 application/json; charset=utf-8
+2020-11-25 18:23:53.417 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 18:23:53.422 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:23:53.435 +08:00 [INF] No saved response found in store.
+2020-11-25 18:23:53.437 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 18:23:53.441 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 18:23:53.445 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 18:23:53.447 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 18:23:53.483 +08:00 [INF] Successfully validated the token.
+2020-11-25 18:23:53.485 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 18:23:53.489 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 18:23:53.579 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 18:23:53.599 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 18:23:53.609 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 18:23:53.621 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 18:23:53.626 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 101.3699ms
+2020-11-25 18:23:53.629 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 18:23:53.631 +08:00 [INF] Generating expiration headers.
+2020-11-25 18:23:53.653 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 10:24:53 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 18:23:53.658 +08:00 [INF] Generating Validation headers.
+2020-11-25 18:23:53.661 +08:00 [INF] Validation headers generated. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6". Last-Modified: Wed, 25 Nov 2020 10:23:53 GMT
+2020-11-25 18:23:53.664 +08:00 [INF] Generating Vary header.
+2020-11-25 18:23:53.666 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 18:23:53.670 +08:00 [INF] Request finished in 252.944ms 200 application/json; charset=utf-8
+2020-11-25 18:24:48.698 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 18:24:48.702 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:24:48.705 +08:00 [INF] Checking If-None-Match.
+2020-11-25 18:24:48.707 +08:00 [INF] Checking If-None-Match: "70944D087E4CCF118FB2192A21D9DC9B".
+2020-11-25 18:24:48.710 +08:00 [INF] ETag valid: "70944D087E4CCF118FB2192A21D9DC9B".
+2020-11-25 18:24:48.712 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 18:24:48.715 +08:00 [INF] Generation done. ETag: Strong, "70944D087E4CCF118FB2192A21D9DC9B", Last-Modified: Wed, 25 Nov 2020 10:19:08 GMT.
+2020-11-25 18:24:48.719 +08:00 [INF] Request finished in 21.3421ms 304 
+2020-11-25 18:49:54.201 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 18:49:54.206 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:49:54.210 +08:00 [INF] Checking If-None-Match.
+2020-11-25 18:49:54.213 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 18:49:54.215 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 18:49:54.218 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 18:49:54.220 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 10:23:53 GMT.
+2020-11-25 18:49:54.225 +08:00 [INF] Request finished in 24.0151ms 304 
+2020-11-25 18:52:51.220 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 18:53:19.104 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 18:55:40.444 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 18:55:48.129 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:55:48.129 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:55:48.131 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:55:48.133 +08:00 [INF] Checking If-None-Match.
+2020-11-25 18:55:48.134 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-25 18:55:48.138 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-25 18:55:48.140 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 18:55:48.141 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 18:55:48.143 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 18:55:48.144 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 18:55:48.148 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 18:55:48.149 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 18:55:48.151 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 18:55:48.153 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 18:55:48.155 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 18:55:48.159 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 10:23:53 GMT.
+2020-11-25 18:55:48.160 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 18:55:48.161 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 18:55:48.164 +08:00 [INF] Request finished in 176944.0622ms 0 
+2020-11-25 18:55:48.171 +08:00 [INF] Successfully validated the token.
+2020-11-25 18:55:48.171 +08:00 [INF] Successfully validated the token.
+2020-11-25 18:55:48.173 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 18:55:48.174 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 18:55:48.177 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 18:55:48.179 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 18:55:48.198 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 18:55:48.198 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 18:55:48.221 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 18:55:48.222 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 18:55:48.229 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 18:55:48.238 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 18:55:48.246 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 18:55:48.250 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 18:55:48.253 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 70.3071ms
+2020-11-25 18:55:48.256 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 67.0923ms
+2020-11-25 18:55:48.258 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 18:55:48.260 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 18:55:48.263 +08:00 [INF] Generating expiration headers.
+2020-11-25 18:55:48.265 +08:00 [INF] Generating expiration headers.
+2020-11-25 18:55:48.267 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 10:56:48 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 18:55:48.270 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 10:56:48 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 18:55:48.273 +08:00 [INF] Generating Validation headers.
+2020-11-25 18:55:48.275 +08:00 [INF] Generating Validation headers.
+2020-11-25 18:55:48.277 +08:00 [INF] Validation headers generated. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6". Last-Modified: Wed, 25 Nov 2020 10:55:48 GMT
+2020-11-25 18:55:48.279 +08:00 [INF] Validation headers generated. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6". Last-Modified: Wed, 25 Nov 2020 10:55:48 GMT
+2020-11-25 18:55:48.281 +08:00 [INF] Generating Vary header.
+2020-11-25 18:55:48.296 +08:00 [INF] Generating Vary header.
+2020-11-25 18:55:48.298 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 18:55:48.300 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 18:55:48.303 +08:00 [INF] Request finished in 149199.1317ms 200 application/json; charset=utf-8
+2020-11-25 18:55:48.306 +08:00 [INF] Request finished in 7861.9454ms 200 application/json; charset=utf-8
+2020-11-25 18:56:11.971 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/posts application/vnd.lxl.post.create+json 244
+2020-11-25 18:56:11.976 +08:00 [INF] CORS policy execution successful.
+2020-11-25 18:56:11.979 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:56:11.980 +08:00 [INF] Not valid - method isn't GET or HEAD.
+2020-11-25 18:56:11.983 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 18:56:11.984 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 18:56:11.986 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 18:56:11.988 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 18:56:11.992 +08:00 [INF] Successfully validated the token.
+2020-11-25 18:56:11.994 +08:00 [INF] Generating expiration headers.
+2020-11-25 18:56:11.997 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 10:57:11 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 18:56:12.000 +08:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2020-11-25 18:56:12.003 +08:00 [INF] Generating Vary header.
+2020-11-25 18:56:12.005 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 18:56:12.008 +08:00 [INF] Request finished in 37.0792ms 404 
+2020-11-25 18:56:54.842 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/posts application/json 335
+2020-11-25 18:56:54.844 +08:00 [INF] CORS policy execution successful.
+2020-11-25 18:56:54.847 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:56:54.851 +08:00 [INF] Not valid - method isn't GET or HEAD.
+2020-11-25 18:56:54.856 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 18:56:54.861 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 18:56:54.865 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 18:56:54.868 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 18:56:54.872 +08:00 [INF] Generating expiration headers.
+2020-11-25 18:56:54.876 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 10:57:54 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 18:56:54.880 +08:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2020-11-25 18:56:54.883 +08:00 [INF] Generating Vary header.
+2020-11-25 18:56:54.885 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 18:56:54.896 +08:00 [INF] Request finished in 54.4305ms 404 
+2020-11-25 18:57:24.915 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/post application/json 313
+2020-11-25 18:57:24.919 +08:00 [INF] CORS policy execution successful.
+2020-11-25 18:57:24.921 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:57:24.924 +08:00 [INF] Not valid - method isn't GET or HEAD.
+2020-11-25 18:57:24.926 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 18:57:24.928 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 18:57:24.929 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 18:57:24.931 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 18:57:24.934 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.CreatePost (Blog.APi)'
+2020-11-25 18:57:24.946 +08:00 [INF] Route matched with {action = "CreatePost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Blog.Infrastructure.Resources.PostResource]] CreatePost(Blog.Infrastructure.Resources.PostAddResource) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 18:57:24.982 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 18:57:25.209 +08:00 [INF] Executed DbCommand (29ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 50), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Posts] ([Id], [Author], [Content], [LastModified], [Remark], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2020-11-25 18:57:25.268 +08:00 [INF] Executing ObjectResult, writing value of type 'Blog.Infrastructure.Resources.PostResource'.
+2020-11-25 18:57:25.273 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.CreatePost (Blog.APi) in 323.2814ms
+2020-11-25 18:57:25.276 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.CreatePost (Blog.APi)'
+2020-11-25 18:57:25.280 +08:00 [INF] Generating expiration headers.
+2020-11-25 18:57:25.282 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 10:58:25 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 18:57:25.290 +08:00 [INF] Generating Validation headers.
+2020-11-25 18:57:25.294 +08:00 [INF] Validation headers generated. ETag: Strong, "5440CB630F78E0509E5A8B122BCAE99B". Last-Modified: Wed, 25 Nov 2020 10:57:25 GMT
+2020-11-25 18:57:25.298 +08:00 [INF] Generating Vary header.
+2020-11-25 18:57:25.303 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 18:57:25.306 +08:00 [INF] Request finished in 391.987ms 201 application/json; charset=utf-8
+2020-11-25 18:57:44.915 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 18:57:44.920 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 18:57:44.922 +08:00 [INF] Checking If-None-Match.
+2020-11-25 18:57:44.927 +08:00 [INF] Checking If-None-Match: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 18:57:44.930 +08:00 [INF] ETag valid: "0FD885FC9D3D00739D4B3C70BA4FB0C6".
+2020-11-25 18:57:44.934 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 18:57:44.939 +08:00 [INF] Generation done. ETag: Strong, "0FD885FC9D3D00739D4B3C70BA4FB0C6", Last-Modified: Wed, 25 Nov 2020 10:55:48 GMT.
+2020-11-25 18:57:44.945 +08:00 [INF] Request finished in 29.5735ms 304 
+2020-11-25 19:12:14.185 +08:00 [INF] Hello, world!
+2020-11-25 19:12:15.143 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:12:15.432 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:12:15.435 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:12:15.439 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:12:15.441 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:12:15.445 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:13:52.321 +08:00 [INF] Hello, world!
+2020-11-25 19:13:53.024 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:13:53.273 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:13:53.275 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:13:53.278 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:13:53.279 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:13:53.281 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:14:36.988 +08:00 [INF] Hello, world!
+2020-11-25 19:14:37.782 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:14:38.027 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:14:38.030 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:14:38.034 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:14:38.036 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:14:38.039 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:14:55.594 +08:00 [INF] Hello, world!
+2020-11-25 19:14:56.322 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:14:56.595 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:14:56.598 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:14:56.601 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:14:56.602 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:14:56.604 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:35:24.772 +08:00 [INF] Hello, world!
+2020-11-25 19:35:25.442 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:35:25.706 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:35:25.708 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:35:25.710 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:35:25.712 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:35:25.713 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:41:29.681 +08:00 [INF] Hello, world!
+2020-11-25 19:41:31.083 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:41:31.400 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:41:31.402 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:41:31.403 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:41:31.404 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:41:31.407 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:41:38.730 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 19:41:38.757 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 19:41:38.767 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-25 19:41:38.768 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 19:41:38.773 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 19:41:38.774 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 19:41:38.775 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 19:41:39.558 +08:00 [INF] Successfully validated the token.
+2020-11-25 19:41:39.564 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 19:41:39.622 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 19:41:40.857 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 19:41:41.930 +08:00 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 19:41:42.077 +08:00 [INF] Executed DbCommand (49ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 19:41:42.230 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 19:41:42.290 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 2658.8464ms
+2020-11-25 19:41:42.295 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 19:41:42.299 +08:00 [INF] Generating expiration headers.
+2020-11-25 19:41:42.302 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 11:42:42 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 19:41:42.307 +08:00 [INF] Generating Validation headers.
+2020-11-25 19:41:42.318 +08:00 [INF] Validation headers generated. ETag: Strong, "56360AE41FA4A1C71A5DE642C8430F97". Last-Modified: Wed, 25 Nov 2020 11:41:42 GMT
+2020-11-25 19:41:42.329 +08:00 [INF] Generating Vary header.
+2020-11-25 19:41:42.331 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 19:41:42.349 +08:00 [INF] Request finished in 3623.4021ms 200 application/json; charset=utf-8
+2020-11-25 19:42:17.755 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryACUEgovPTwAKqlDC 508555
+2020-11-25 19:42:17.762 +08:00 [INF] CORS policy execution successful.
+2020-11-25 19:42:17.764 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 19:42:17.766 +08:00 [INF] Not valid - method isn't GET or HEAD.
+2020-11-25 19:42:17.767 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 19:42:17.769 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 19:42:17.770 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 19:42:17.772 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 19:42:17.777 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 19:42:17.785 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Upload(Microsoft.AspNetCore.Http.IFormFile) on controller Blog.APi.Controllers.PostImageController (Blog.APi).
+2020-11-25 19:42:17.898 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 19:42:18.160 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([Id], [FileName])
+VALUES (@p0, @p1);
+2020-11-25 19:42:18.204 +08:00 [INF] Executed action Blog.APi.Controllers.PostImageController.Upload (Blog.APi) in 406.5925ms
+2020-11-25 19:42:18.207 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 19:42:18.211 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PostImage -> PostImageResource
+Blog.Core.Entities.PostImage -> Blog.Infrastructure.Resources.PostImageResource
+   at lambda_method(Closure , PostImage , PostImageResource , ResolutionContext )
+   at Blog.APi.Controllers.PostImageController.Upload(IFormFile file) in E:\vs项目\blog3.1\Blog.APi\Blog.APi\Controllers\PostImageController.cs:line 90
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-25 19:42:18.342 +08:00 [ERR] An exception was thrown attempting to display the error page.
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-25 19:42:18.358 +08:00 [ERR] Connection id "0HM4H6S90Q09G", Request id "0HM4H6S90Q09G:00000001": An unhandled exception was thrown by the application.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PostImage -> PostImageResource
+Blog.Core.Entities.PostImage -> Blog.Infrastructure.Resources.PostImageResource
+   at lambda_method(Closure , PostImage , PostImageResource , ResolutionContext )
+   at Blog.APi.Controllers.PostImageController.Upload(IFormFile file) in E:\vs项目\blog3.1\Blog.APi\Blog.APi\Controllers\PostImageController.cs:line 90
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-11-25 19:42:18.397 +08:00 [ERR] Connection id "0HM4H6S90Q09G", Request id "0HM4H6S90Q09G:00000001": An unhandled exception was thrown by the application.
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(CancellationToken cancellationToken)
+   at System.IO.Pipelines.StreamPipeWriter.CompleteAsync(Exception exception)
+   at Microsoft.AspNetCore.Http.StreamResponseBodyFeature.CompleteAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.FireOnCompletedAwaited(Task currentTask, Stack`1 onCompleted)
+2020-11-25 19:42:18.417 +08:00 [INF] Request finished in 662.6045ms 500 
+2020-11-25 19:43:58.497 +08:00 [INF] Hello, world!
+2020-11-25 19:43:59.709 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:44:00.055 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:44:00.057 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:44:00.059 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:44:00.060 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:44:00.062 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:44:08.940 +08:00 [INF] Application is shutting down...
+2020-11-25 19:44:16.721 +08:00 [INF] Hello, world!
+2020-11-25 19:44:17.327 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:44:17.609 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:44:17.612 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:44:17.614 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:44:17.617 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:44:17.620 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:44:56.717 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryL4MmRFGRWHpFfgE5 508555
+2020-11-25 19:44:56.730 +08:00 [INF] CORS policy execution successful.
+2020-11-25 19:44:56.737 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 19:44:56.739 +08:00 [INF] Not valid - method isn't GET or HEAD.
+2020-11-25 19:44:56.740 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 19:44:56.744 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 19:44:56.745 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 19:44:56.749 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 19:44:56.813 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 19:44:56.865 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Upload(Microsoft.AspNetCore.Http.IFormFile) on controller Blog.APi.Controllers.PostImageController (Blog.APi).
+2020-11-25 19:44:57.777 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 19:44:58.447 +08:00 [INF] Executed DbCommand (75ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([Id], [FileName])
+VALUES (@p0, @p1);
+2020-11-25 19:44:58.527 +08:00 [INF] Executed action Blog.APi.Controllers.PostImageController.Upload (Blog.APi) in 1651.1851ms
+2020-11-25 19:44:58.530 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 19:44:58.536 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PostImage -> PostImageResource
+Blog.Core.Entities.PostImage -> Blog.Infrastructure.Resources.PostImageResource
+   at lambda_method(Closure , PostImage , PostImageResource , ResolutionContext )
+   at Blog.APi.Controllers.PostImageController.Upload(IFormFile file) in E:\vs项目\blog3.1\Blog.APi\Blog.APi\Controllers\PostImageController.cs:line 90
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-25 19:44:58.596 +08:00 [ERR] An exception was thrown attempting to display the error page.
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-25 19:44:58.612 +08:00 [ERR] Connection id "0HM4H6U41JGB8", Request id "0HM4H6U41JGB8:00000001": An unhandled exception was thrown by the application.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PostImage -> PostImageResource
+Blog.Core.Entities.PostImage -> Blog.Infrastructure.Resources.PostImageResource
+   at lambda_method(Closure , PostImage , PostImageResource , ResolutionContext )
+   at Blog.APi.Controllers.PostImageController.Upload(IFormFile file) in E:\vs项目\blog3.1\Blog.APi\Blog.APi\Controllers\PostImageController.cs:line 90
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-11-25 19:44:58.648 +08:00 [ERR] Connection id "0HM4H6U41JGB8", Request id "0HM4H6U41JGB8:00000001": An unhandled exception was thrown by the application.
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(CancellationToken cancellationToken)
+   at System.IO.Pipelines.StreamPipeWriter.CompleteAsync(Exception exception)
+   at Microsoft.AspNetCore.Http.StreamResponseBodyFeature.CompleteAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.FireOnCompletedAwaited(Task currentTask, Stack`1 onCompleted)
+2020-11-25 19:44:58.666 +08:00 [INF] Request finished in 1953.0581ms 500 
+2020-11-25 19:46:00.545 +08:00 [INF] Application is shutting down...
+2020-11-25 19:46:09.284 +08:00 [INF] Hello, world!
+2020-11-25 19:46:10.313 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:46:10.713 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:46:10.715 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:46:10.718 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:46:10.720 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:46:10.721 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:46:18.934 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 19:46:18.958 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 19:46:18.976 +08:00 [INF] No saved response found in store.
+2020-11-25 19:46:18.977 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 19:46:18.985 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 19:46:18.987 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 19:46:18.989 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 19:46:19.696 +08:00 [INF] Successfully validated the token.
+2020-11-25 19:46:19.703 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 19:46:19.770 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 19:46:20.794 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 19:46:21.617 +08:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 19:46:21.782 +08:00 [INF] Executed DbCommand (54ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 19:46:21.919 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 19:46:21.977 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 2196.6013ms
+2020-11-25 19:46:21.981 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 19:46:21.986 +08:00 [INF] Generating expiration headers.
+2020-11-25 19:46:21.989 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 11:47:21 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 19:46:21.995 +08:00 [INF] Generating Validation headers.
+2020-11-25 19:46:22.002 +08:00 [INF] Validation headers generated. ETag: Strong, "56360AE41FA4A1C71A5DE642C8430F97". Last-Modified: Wed, 25 Nov 2020 11:46:22 GMT
+2020-11-25 19:46:22.005 +08:00 [INF] Generating Vary header.
+2020-11-25 19:46:22.007 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 19:46:22.024 +08:00 [INF] Request finished in 3095.2774ms 200 application/json; charset=utf-8
+2020-11-25 19:46:39.341 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryKnt2haUrNsAlns6j 691895
+2020-11-25 19:46:39.346 +08:00 [INF] CORS policy execution successful.
+2020-11-25 19:46:39.348 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 19:46:39.350 +08:00 [INF] Not valid - method isn't GET or HEAD.
+2020-11-25 19:46:39.352 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 19:46:39.353 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 19:46:39.355 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 19:46:39.357 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 19:46:39.361 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 19:46:39.369 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Upload(Microsoft.AspNetCore.Http.IFormFile) on controller Blog.APi.Controllers.PostImageController (Blog.APi).
+2020-11-25 19:46:39.459 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 19:46:39.617 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([Id], [FileName])
+VALUES (@p0, @p1);
+2020-11-25 19:46:39.665 +08:00 [INF] Executed action Blog.APi.Controllers.PostImageController.Upload (Blog.APi) in 290.1912ms
+2020-11-25 19:46:39.668 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 19:46:39.671 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PostImage -> PostImageResource
+Blog.Core.Entities.PostImage -> Blog.Infrastructure.Resources.PostImageResource
+   at lambda_method(Closure , PostImage , PostImageResource , ResolutionContext )
+   at Blog.APi.Controllers.PostImageController.Upload(IFormFile file) in E:\vs项目\blog3.1\Blog.APi\Blog.APi\Controllers\PostImageController.cs:line 90
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-25 19:46:39.765 +08:00 [ERR] An exception was thrown attempting to display the error page.
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-25 19:46:39.800 +08:00 [ERR] Connection id "0HM4H6USHLN5N", Request id "0HM4H6USHLN5N:00000001": An unhandled exception was thrown by the application.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PostImage -> PostImageResource
+Blog.Core.Entities.PostImage -> Blog.Infrastructure.Resources.PostImageResource
+   at lambda_method(Closure , PostImage , PostImageResource , ResolutionContext )
+   at Blog.APi.Controllers.PostImageController.Upload(IFormFile file) in E:\vs项目\blog3.1\Blog.APi\Blog.APi\Controllers\PostImageController.cs:line 90
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-11-25 19:46:39.888 +08:00 [ERR] Connection id "0HM4H6USHLN5N", Request id "0HM4H6USHLN5N:00000001": An unhandled exception was thrown by the application.
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(CancellationToken cancellationToken)
+   at System.IO.Pipelines.StreamPipeWriter.CompleteAsync(Exception exception)
+   at Microsoft.AspNetCore.Http.StreamResponseBodyFeature.CompleteAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.FireOnCompletedAwaited(Task currentTask, Stack`1 onCompleted)
+2020-11-25 19:46:39.910 +08:00 [INF] Request finished in 570.0373ms 500 
+2020-11-25 19:47:15.597 +08:00 [INF] Hello, world!
+2020-11-25 19:47:16.339 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:47:16.777 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:47:16.779 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:47:16.781 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:47:16.782 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:47:16.786 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:47:36.724 +08:00 [INF] Hello, world!
+2020-11-25 19:47:37.348 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:47:37.604 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:47:37.606 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:47:37.609 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:47:37.611 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:47:37.615 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:47:59.720 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 19:47:59.740 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 19:47:59.752 +08:00 [INF] No saved response found in store.
+2020-11-25 19:47:59.753 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 19:47:59.758 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 19:47:59.759 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 19:47:59.763 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 19:48:00.456 +08:00 [INF] Successfully validated the token.
+2020-11-25 19:48:00.463 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 19:48:00.530 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 19:48:01.430 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 19:48:02.095 +08:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 19:48:02.241 +08:00 [INF] Executed DbCommand (46ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 19:48:02.365 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 19:48:02.427 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 1884.8605ms
+2020-11-25 19:48:02.431 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 19:48:02.436 +08:00 [INF] Generating expiration headers.
+2020-11-25 19:48:02.439 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 11:49:02 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 19:48:02.444 +08:00 [INF] Generating Validation headers.
+2020-11-25 19:48:02.450 +08:00 [INF] Validation headers generated. ETag: Strong, "56360AE41FA4A1C71A5DE642C8430F97". Last-Modified: Wed, 25 Nov 2020 11:48:02 GMT
+2020-11-25 19:48:02.459 +08:00 [INF] Generating Vary header.
+2020-11-25 19:48:02.460 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 19:48:02.478 +08:00 [INF] Request finished in 2760.6171ms 200 application/json; charset=utf-8
+2020-11-25 19:48:13.977 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryUymiXc3ggj0vaM77 691895
+2020-11-25 19:48:13.989 +08:00 [INF] CORS policy execution successful.
+2020-11-25 19:48:13.992 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 19:48:13.996 +08:00 [INF] Not valid - method isn't GET or HEAD.
+2020-11-25 19:48:14.004 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 19:48:14.009 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 19:48:14.015 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 19:48:14.019 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 19:48:14.024 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 19:48:14.033 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Upload(Microsoft.AspNetCore.Http.IFormFile) on controller Blog.APi.Controllers.PostImageController (Blog.APi).
+2020-11-25 19:48:14.126 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 19:48:14.265 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([Id], [FileName])
+VALUES (@p0, @p1);
+2020-11-25 19:48:14.314 +08:00 [INF] Executed action Blog.APi.Controllers.PostImageController.Upload (Blog.APi) in 276.9136ms
+2020-11-25 19:48:14.317 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 19:48:14.320 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PostImage -> PostImageResource
+Blog.Core.Entities.PostImage -> Blog.Infrastructure.Resources.PostImageResource
+   at lambda_method(Closure , PostImage , PostImageResource , ResolutionContext )
+   at Blog.APi.Controllers.PostImageController.Upload(IFormFile file) in E:\vs项目\blog3.1\Blog.APi\Blog.APi\Controllers\PostImageController.cs:line 90
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-25 19:48:14.384 +08:00 [ERR] An exception was thrown attempting to display the error page.
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-25 19:48:14.402 +08:00 [ERR] Connection id "0HM4H6VQJ44VM", Request id "0HM4H6VQJ44VM:00000001": An unhandled exception was thrown by the application.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PostImage -> PostImageResource
+Blog.Core.Entities.PostImage -> Blog.Infrastructure.Resources.PostImageResource
+   at lambda_method(Closure , PostImage , PostImageResource , ResolutionContext )
+   at Blog.APi.Controllers.PostImageController.Upload(IFormFile file) in E:\vs项目\blog3.1\Blog.APi\Blog.APi\Controllers\PostImageController.cs:line 90
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-11-25 19:48:14.441 +08:00 [ERR] Connection id "0HM4H6VQJ44VM", Request id "0HM4H6VQJ44VM:00000001": An unhandled exception was thrown by the application.
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(CancellationToken cancellationToken)
+   at System.IO.Pipelines.StreamPipeWriter.CompleteAsync(Exception exception)
+   at Microsoft.AspNetCore.Http.StreamResponseBodyFeature.CompleteAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.FireOnCompletedAwaited(Task currentTask, Stack`1 onCompleted)
+2020-11-25 19:48:14.459 +08:00 [INF] Request finished in 482.3753ms 500 
+2020-11-25 19:52:03.954 +08:00 [INF] Hello, world!
+2020-11-25 19:52:04.696 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:52:04.965 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:52:04.967 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:52:04.969 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:52:04.971 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:52:04.972 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:52:59.777 +08:00 [INF] Application is shutting down...
+2020-11-25 19:53:06.552 +08:00 [INF] Hello, world!
+2020-11-25 19:53:07.231 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 19:53:07.492 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 19:53:07.494 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 19:53:07.497 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 19:53:07.499 +08:00 [INF] Hosting environment: Development
+2020-11-25 19:53:07.501 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 19:59:31.059 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 19:59:33.291 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 19:59:33.304 +08:00 [INF] No saved response found in store.
+2020-11-25 19:59:33.306 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 19:59:33.312 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 19:59:33.314 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 19:59:33.316 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 19:59:33.987 +08:00 [INF] Successfully validated the token.
+2020-11-25 19:59:33.994 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 19:59:34.049 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 19:59:34.887 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 19:59:35.563 +08:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 19:59:35.742 +08:00 [INF] Executed DbCommand (82ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 19:59:35.874 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 19:59:35.928 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 1868.7011ms
+2020-11-25 19:59:35.933 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 19:59:35.938 +08:00 [INF] Generating expiration headers.
+2020-11-25 19:59:35.941 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 12:00:35 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 19:59:35.949 +08:00 [INF] Generating Validation headers.
+2020-11-25 19:59:35.953 +08:00 [INF] Validation headers generated. ETag: Strong, "56360AE41FA4A1C71A5DE642C8430F97". Last-Modified: Wed, 25 Nov 2020 11:59:35 GMT
+2020-11-25 19:59:35.955 +08:00 [INF] Generating Vary header.
+2020-11-25 19:59:35.957 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 19:59:35.975 +08:00 [INF] Request finished in 4920.0971ms 200 application/json; charset=utf-8
+2020-11-25 20:00:10.752 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryynfGAASQj6JJ0oPL 691895
+2020-11-25 20:00:10.759 +08:00 [INF] CORS policy execution successful.
+2020-11-25 20:00:10.762 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 20:00:10.765 +08:00 [INF] Not valid - method isn't GET or HEAD.
+2020-11-25 20:00:10.769 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 20:00:10.771 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 20:00:10.774 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 20:00:10.777 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 20:00:10.787 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 20:00:10.804 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Upload(Microsoft.AspNetCore.Http.IFormFile) on controller Blog.APi.Controllers.PostImageController (Blog.APi).
+2020-11-25 20:00:10.901 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 20:00:11.045 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([Id], [FileName])
+VALUES (@p0, @p1);
+2020-11-25 20:00:11.089 +08:00 [INF] Executed action Blog.APi.Controllers.PostImageController.Upload (Blog.APi) in 277.5867ms
+2020-11-25 20:00:11.092 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 20:00:11.095 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PostImage -> PostImageResource
+Blog.Core.Entities.PostImage -> Blog.Infrastructure.Resources.PostImageResource
+   at lambda_method(Closure , PostImage , PostImageResource , ResolutionContext )
+   at Blog.APi.Controllers.PostImageController.Upload(IFormFile file) in E:\vs项目\blog3.1\Blog.APi\Blog.APi\Controllers\PostImageController.cs:line 90
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-25 20:00:11.170 +08:00 [ERR] An exception was thrown attempting to display the error page.
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-25 20:00:11.184 +08:00 [ERR] Connection id "0HM4H768K7HNL", Request id "0HM4H768K7HNL:00000001": An unhandled exception was thrown by the application.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+PostImage -> PostImageResource
+Blog.Core.Entities.PostImage -> Blog.Infrastructure.Resources.PostImageResource
+   at lambda_method(Closure , PostImage , PostImageResource , ResolutionContext )
+   at Blog.APi.Controllers.PostImageController.Upload(IFormFile file) in E:\vs项目\blog3.1\Blog.APi\Blog.APi\Controllers\PostImageController.cs:line 90
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-11-25 20:00:11.217 +08:00 [ERR] Connection id "0HM4H768K7HNL", Request id "0HM4H768K7HNL:00000001": An unhandled exception was thrown by the application.
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(CancellationToken cancellationToken)
+   at System.IO.Pipelines.StreamPipeWriter.CompleteAsync(Exception exception)
+   at Microsoft.AspNetCore.Http.StreamResponseBodyFeature.CompleteAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.FireOnCompletedAwaited(Task currentTask, Stack`1 onCompleted)
+2020-11-25 20:00:11.235 +08:00 [INF] Request finished in 483.1999ms 500 
+2020-11-25 20:03:11.385 +08:00 [INF] Application is shutting down...
+2020-11-25 20:05:01.008 +08:00 [INF] Hello, world!
+2020-11-25 20:05:05.463 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 20:05:06.247 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 20:05:06.250 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 20:05:06.256 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 20:05:06.258 +08:00 [INF] Hosting environment: Development
+2020-11-25 20:05:06.259 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 20:05:10.180 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:7000/api/post  
+2020-11-25 20:05:10.212 +08:00 [INF] Request finished in 35.7952ms 307 
+2020-11-25 20:05:10.356 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/post  
+2020-11-25 20:05:10.380 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 20:05:10.388 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-25 20:05:10.390 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 20:05:10.393 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 20:05:10.394 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 20:05:10.396 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 20:05:10.560 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 20:05:10.635 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 20:05:11.357 +08:00 [INF] Executing action method Blog.APi.Controllers.PostController.GetPosts (Blog.APi) - Validation state: "Valid"
+2020-11-25 20:05:12.156 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 20:05:13.306 +08:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 20:05:13.479 +08:00 [INF] Executed DbCommand (50ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 20:05:13.635 +08:00 [INF] Executed action method Blog.APi.Controllers.PostController.GetPosts (Blog.APi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2265.5771ms.
+2020-11-25 20:05:13.647 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 20:05:13.853 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 3209.7642ms
+2020-11-25 20:05:13.857 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 20:05:13.866 +08:00 [INF] Generating expiration headers.
+2020-11-25 20:05:13.869 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 12:06:13 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 20:05:13.874 +08:00 [INF] Generating Validation headers.
+2020-11-25 20:05:13.888 +08:00 [INF] Validation headers generated. ETag: Strong, "C06EBB5E9BF1FAE2A66A811CC9687CBD". Last-Modified: Wed, 25 Nov 2020 12:05:13 GMT
+2020-11-25 20:05:13.891 +08:00 [INF] Generating Vary header.
+2020-11-25 20:05:13.893 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 20:05:13.911 +08:00 [INF] Request finished in 3555.1607ms 200 application/json; charset=utf-8
+2020-11-25 20:05:14.127 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7001/favicon.ico  
+2020-11-25 20:05:14.131 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 20:05:14.132 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-25 20:05:14.134 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 20:05:14.137 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 20:05:14.139 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 20:05:14.141 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 20:05:14.145 +08:00 [INF] Generating expiration headers.
+2020-11-25 20:05:14.148 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 12:06:14 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 20:05:14.151 +08:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2020-11-25 20:05:14.154 +08:00 [INF] Generating Vary header.
+2020-11-25 20:05:14.159 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 20:05:14.161 +08:00 [INF] Request finished in 34.3868ms 404 
+2020-11-25 20:07:01.354 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 20:07:01.361 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 20:07:01.364 +08:00 [INF] No saved response found in store.
+2020-11-25 20:07:01.367 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 20:07:01.370 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 20:07:01.372 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 20:07:01.376 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 20:07:02.275 +08:00 [INF] Successfully validated the token.
+2020-11-25 20:07:02.281 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 20:07:02.283 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 20:07:02.353 +08:00 [INF] Executing action method Blog.APi.Controllers.PostController.GetPosts (Blog.APi) - Validation state: "Valid"
+2020-11-25 20:07:02.403 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 20:07:02.424 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 20:07:02.434 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 20:07:02.446 +08:00 [INF] Executed action method Blog.APi.Controllers.PostController.GetPosts (Blog.APi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 91.4985ms.
+2020-11-25 20:07:02.450 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 20:07:02.455 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 166.868ms
+2020-11-25 20:07:02.457 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 20:07:02.459 +08:00 [INF] Generating expiration headers.
+2020-11-25 20:07:02.473 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 12:08:02 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 20:07:02.475 +08:00 [INF] Generating Validation headers.
+2020-11-25 20:07:02.478 +08:00 [INF] Validation headers generated. ETag: Strong, "56360AE41FA4A1C71A5DE642C8430F97". Last-Modified: Wed, 25 Nov 2020 12:07:02 GMT
+2020-11-25 20:07:02.482 +08:00 [INF] Generating Vary header.
+2020-11-25 20:07:02.484 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 20:07:02.487 +08:00 [INF] Request finished in 1132.803ms 200 application/json; charset=utf-8
+2020-11-25 20:07:32.181 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/postimages multipart/form-data; boundary=----WebKitFormBoundaryuBzeXlCqp2oBBjn3 691895
+2020-11-25 20:07:32.189 +08:00 [INF] CORS policy execution successful.
+2020-11-25 20:07:32.191 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 20:07:32.194 +08:00 [INF] Not valid - method isn't GET or HEAD.
+2020-11-25 20:07:32.195 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 20:07:32.197 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 20:07:32.199 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 20:07:32.201 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 20:07:32.204 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 20:07:32.211 +08:00 [INF] Route matched with {action = "Upload", controller = "PostImage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Upload(Microsoft.AspNetCore.Http.IFormFile) on controller Blog.APi.Controllers.PostImageController (Blog.APi).
+2020-11-25 20:07:32.348 +08:00 [INF] Executing action method Blog.APi.Controllers.PostImageController.Upload (Blog.APi) - Validation state: "Valid"
+2020-11-25 20:07:32.379 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 20:07:32.538 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PostImages] ([Id], [FileName])
+VALUES (@p0, @p1);
+2020-11-25 20:07:32.582 +08:00 [INF] Executed action method Blog.APi.Controllers.PostImageController.Upload (Blog.APi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 230.6522ms.
+2020-11-25 20:07:32.588 +08:00 [INF] Executing ObjectResult, writing value of type 'Blog.Infrastructure.Resources.PostImageResource'.
+2020-11-25 20:07:32.594 +08:00 [INF] Executed action Blog.APi.Controllers.PostImageController.Upload (Blog.APi) in 375.7672ms
+2020-11-25 20:07:32.596 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostImageController.Upload (Blog.APi)'
+2020-11-25 20:07:32.598 +08:00 [INF] Generating expiration headers.
+2020-11-25 20:07:32.599 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 12:08:32 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 20:07:32.601 +08:00 [INF] Generating Validation headers.
+2020-11-25 20:07:32.604 +08:00 [INF] Validation headers generated. ETag: Strong, "A79811A76F2DDEE82DAB78AB69899B05". Last-Modified: Wed, 25 Nov 2020 12:07:32 GMT
+2020-11-25 20:07:32.605 +08:00 [INF] Generating Vary header.
+2020-11-25 20:07:32.607 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 20:07:32.612 +08:00 [INF] Request finished in 431.1162ms 200 application/json; charset=utf-8
+2020-11-25 20:07:33.139 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/de743608-ca44-4098-9364-843f520717c0.png  
+2020-11-25 20:07:33.208 +08:00 [INF] Sending file. Request path: '/uploads/de743608-ca44-4098-9364-843f520717c0.png'. Physical path: 'E:\vs项目\blog3.1\Blog.APi\Blog.APi\wwwroot\uploads\de743608-ca44-4098-9364-843f520717c0.png'
+2020-11-25 20:07:33.212 +08:00 [INF] Request finished in 73.8414ms 200 image/png
+2020-11-25 20:07:36.310 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/uploads/de743608-ca44-4098-9364-843f520717c0.png  
+2020-11-25 20:07:36.317 +08:00 [INF] The file /uploads/de743608-ca44-4098-9364-843f520717c0.png was not modified
+2020-11-25 20:07:36.321 +08:00 [INF] Request finished in 11.5588ms 304 image/png
+2020-11-25 20:07:49.991 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:4200/api/post application/json 161
+2020-11-25 20:07:49.994 +08:00 [INF] CORS policy execution successful.
+2020-11-25 20:07:49.996 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 20:07:49.999 +08:00 [INF] Not valid - method isn't GET or HEAD.
+2020-11-25 20:07:50.003 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 20:07:50.006 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 20:07:50.008 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 20:07:50.010 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 20:07:50.015 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.CreatePost (Blog.APi)'
+2020-11-25 20:07:50.026 +08:00 [INF] Route matched with {action = "CreatePost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Blog.Infrastructure.Resources.PostResource]] CreatePost(Blog.Infrastructure.Resources.PostAddResource) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 20:07:50.101 +08:00 [INF] Executing action method Blog.APi.Controllers.PostController.CreatePost (Blog.APi) - Validation state: "Valid"
+2020-11-25 20:08:05.444 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 20:08:05.476 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 50), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Posts] ([Id], [Author], [Content], [LastModified], [Remark], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2020-11-25 20:08:05.492 +08:00 [INF] Executed action method Blog.APi.Controllers.PostController.CreatePost (Blog.APi), returned result Microsoft.AspNetCore.Mvc.CreatedAtRouteResult in 15388.0798ms.
+2020-11-25 20:08:05.498 +08:00 [INF] Executing ObjectResult, writing value of type 'Blog.Infrastructure.Resources.PostResource'.
+2020-11-25 20:08:05.503 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.CreatePost (Blog.APi) in 15467.718ms
+2020-11-25 20:08:05.512 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.CreatePost (Blog.APi)'
+2020-11-25 20:08:05.514 +08:00 [INF] Generating expiration headers.
+2020-11-25 20:08:05.516 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 12:09:05 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 20:08:05.521 +08:00 [INF] Generating Validation headers.
+2020-11-25 20:08:05.523 +08:00 [INF] Validation headers generated. ETag: Strong, "FE212D6B7737D2C769FF2CB1F91BEA02". Last-Modified: Wed, 25 Nov 2020 12:08:05 GMT
+2020-11-25 20:08:05.525 +08:00 [INF] Generating Vary header.
+2020-11-25 20:08:05.527 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 20:08:05.531 +08:00 [INF] Request finished in 15540.4913ms 201 application/json; charset=utf-8
+2020-11-25 20:46:10.010 +08:00 [INF] Hello, world!
+2020-11-25 20:46:10.726 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-25 20:46:11.020 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-25 20:46:11.023 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-25 20:46:11.025 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-25 20:46:11.028 +08:00 [INF] Hosting environment: Development
+2020-11-25 20:46:11.032 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-25 20:46:19.390 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 20:46:19.406 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 20:46:19.412 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-25 20:46:19.414 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 20:46:19.418 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 20:46:19.421 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 20:46:19.423 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 20:46:20.136 +08:00 [INF] Successfully validated the token.
+2020-11-25 20:46:20.145 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 20:46:20.239 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 20:46:21.311 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 20:46:22.075 +08:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 20:46:22.236 +08:00 [INF] Executed DbCommand (50ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 20:46:22.385 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 20:46:22.447 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 2196.959ms
+2020-11-25 20:46:22.452 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 20:46:22.458 +08:00 [INF] Generating expiration headers.
+2020-11-25 20:46:22.461 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 12:47:22 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 20:46:22.466 +08:00 [INF] Generating Validation headers.
+2020-11-25 20:46:22.480 +08:00 [INF] Validation headers generated. ETag: Strong, "56360AE41FA4A1C71A5DE642C8430F97". Last-Modified: Wed, 25 Nov 2020 12:46:22 GMT
+2020-11-25 20:46:22.483 +08:00 [INF] Generating Vary header.
+2020-11-25 20:46:22.487 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 20:46:22.507 +08:00 [INF] Request finished in 3121.0744ms 200 application/json; charset=utf-8
+2020-11-25 20:46:50.380 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-25 20:46:50.385 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 20:46:50.386 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-25 20:46:50.390 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-25 20:46:50.396 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-25 20:46:50.401 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-25 20:46:50.405 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-25 20:46:50.410 +08:00 [INF] Successfully validated the token.
+2020-11-25 20:46:50.413 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 20:46:50.416 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-25 20:46:50.490 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-25 20:46:50.529 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-25 20:46:50.599 +08:00 [INF] Executed DbCommand (61ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY [p].[LastModified] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-25 20:46:50.613 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-25 20:46:50.617 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 191.2412ms
+2020-11-25 20:46:50.619 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-25 20:46:50.622 +08:00 [INF] Generating expiration headers.
+2020-11-25 20:46:50.624 +08:00 [INF] Expiration headers generated. Expires: Wed, 25 Nov 2020 12:47:50 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-25 20:46:50.634 +08:00 [INF] Generating Validation headers.
+2020-11-25 20:46:50.636 +08:00 [INF] Validation headers generated. ETag: Strong, "C0BC729676ABA33C17FDFEB74A9F37B1". Last-Modified: Wed, 25 Nov 2020 12:46:50 GMT
+2020-11-25 20:46:50.639 +08:00 [INF] Generating Vary header.
+2020-11-25 20:46:50.643 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-25 20:46:50.645 +08:00 [INF] Request finished in 265.2625ms 200 application/json; charset=utf-8
+2020-11-25 20:47:32.735 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified&pageSize=10&pageIndex=1  
+2020-11-25 20:47:32.739 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 20:47:32.743 +08:00 [INF] Checking If-None-Match.
+2020-11-25 20:47:32.746 +08:00 [INF] Checking If-None-Match: "56360AE41FA4A1C71A5DE642C8430F97".
+2020-11-25 20:47:32.749 +08:00 [INF] ETag valid: "56360AE41FA4A1C71A5DE642C8430F97".
+2020-11-25 20:47:32.752 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 20:47:32.757 +08:00 [INF] Generation done. ETag: Strong, "56360AE41FA4A1C71A5DE642C8430F97", Last-Modified: Wed, 25 Nov 2020 12:46:22 GMT.
+2020-11-25 20:47:32.760 +08:00 [INF] Request finished in 25.2227ms 304 
+2020-11-25 20:48:09.805 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/post?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-25 20:48:09.810 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-25 20:48:09.814 +08:00 [INF] Checking If-None-Match.
+2020-11-25 20:48:09.815 +08:00 [INF] Checking If-None-Match: "C0BC729676ABA33C17FDFEB74A9F37B1".
+2020-11-25 20:48:09.819 +08:00 [INF] ETag valid: "C0BC729676ABA33C17FDFEB74A9F37B1".
+2020-11-25 20:48:09.822 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-25 20:48:09.827 +08:00 [INF] Generation done. ETag: Strong, "C0BC729676ABA33C17FDFEB74A9F37B1", Last-Modified: Wed, 25 Nov 2020 12:46:50 GMT.
+2020-11-25 20:48:09.832 +08:00 [INF] Request finished in 26.8819ms 304 
+2020-11-25 20:48:50.954 +08:00 [INF] Application is shutting down...

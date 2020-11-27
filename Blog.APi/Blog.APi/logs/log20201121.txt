@@ -1,0 +1,49 @@
+2020-11-21 22:35:22.546 +08:00 [INF] Hello, world!
+2020-11-21 22:38:43.772 +08:00 [INF] Hello, world!
+2020-11-21 22:38:48.768 +08:00 [INF] Now listening on: https://localhost:5001
+2020-11-21 22:38:48.777 +08:00 [INF] Now listening on: http://localhost:5000
+2020-11-21 22:38:48.780 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-21 22:38:48.782 +08:00 [INF] Hosting environment: Development
+2020-11-21 22:38:48.785 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-21 22:38:52.105 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/  
+2020-11-21 22:38:52.135 +08:00 [INF] Request finished in 32.7402ms 307 
+2020-11-21 22:38:52.247 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/  
+2020-11-21 22:38:52.279 +08:00 [INF] Request finished in 32.4937ms 404 
+2020-11-21 22:39:00.385 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/post  
+2020-11-21 22:39:00.406 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-21 22:39:00.482 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-21 22:39:00.945 +08:00 [INF] Executing action method Blog.APi.Controllers.PostController.GetPosts (Blog.APi) - Validation state: "Valid"
+2020-11-21 22:39:01.582 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-21 22:39:02.229 +08:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-21 22:39:02.387 +08:00 [INF] Executed DbCommand (58ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-21 22:39:02.480 +08:00 [INF] Executed action method Blog.APi.Controllers.PostController.GetPosts (Blog.APi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1520.7142ms.
+2020-11-21 22:39:02.495 +08:00 [INF] Executing ObjectResult, writing value of type 'Blog.Core.Entities.PagedList`1[[Blog.Core.Entities.Post, Blog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-21 22:39:02.531 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 2036.0269ms
+2020-11-21 22:39:02.542 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-21 22:39:02.563 +08:00 [INF] Request finished in 2178.5187ms 200 application/json; charset=utf-8
+2020-11-21 22:39:02.600 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
+2020-11-21 22:39:02.610 +08:00 [INF] Request finished in 9.7681ms 404 
+2020-11-21 22:39:14.523 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/post  
+2020-11-21 22:39:14.530 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-21 22:39:14.541 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-21 22:39:14.605 +08:00 [INF] Executing action method Blog.APi.Controllers.PostController.GetPosts (Blog.APi) - Validation state: "Valid"
+2020-11-21 22:39:14.658 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-21 22:39:14.675 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2020-11-21 22:39:14.695 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Content], [p].[LastModified], [p].[Remark], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2020-11-21 22:39:14.718 +08:00 [INF] Executed action method Blog.APi.Controllers.PostController.GetPosts (Blog.APi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 107.6713ms.
+2020-11-21 22:39:14.727 +08:00 [INF] Executing ObjectResult, writing value of type 'Blog.Core.Entities.PagedList`1[[Blog.Core.Entities.Post, Blog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-21 22:39:14.741 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 171.1818ms
+2020-11-21 22:39:14.747 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-21 22:39:14.758 +08:00 [INF] Request finished in 235.5014ms 200 application/json; charset=utf-8

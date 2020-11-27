@@ -1,0 +1,673 @@
+2020-11-26 21:12:40.286 +08:00 [INF] Hello, world!
+2020-11-26 21:12:45.792 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-26 21:12:46.537 +08:00 [FTL] Unable to start Kestrel.
+System.IO.IOException: Failed to bind to address https://127.0.0.1:7001: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+ ---> System.Net.Sockets.SocketException (10048): 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass21_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2020-11-26 21:13:43.782 +08:00 [INF] Hello, world!
+2020-11-26 21:13:44.351 +08:00 [INF] User profile is available. Using 'C:\Users\lll\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-11-26 21:13:44.604 +08:00 [INF] Now listening on: https://localhost:7001
+2020-11-26 21:13:44.606 +08:00 [INF] Now listening on: http://localhost:7000
+2020-11-26 21:13:44.607 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-26 21:13:44.608 +08:00 [INF] Hosting environment: Development
+2020-11-26 21:13:44.610 +08:00 [INF] Content root path: E:\vs项目\blog3.1\Blog.APi\Blog.APi
+2020-11-26 21:14:14.624 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:14:23.880 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:14:23.888 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-26 21:14:23.890 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-26 21:14:23.895 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-26 21:14:23.897 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-26 21:14:23.901 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-26 21:14:24.426 +08:00 [INF] Successfully validated the token.
+2020-11-26 21:14:24.433 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-26 21:14:24.487 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-26 21:14:25.347 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-26 21:14:25.945 +08:00 [INF] Executed DbCommand (59ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM (
+    SELECT [p].[Id], [p].[Content], [p].[ContentAbstract], [p].[LastModified], [p].[Title]
+    FROM [Posts] AS [p]
+    ORDER BY [p].[LastModified] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+2020-11-26 21:14:26.089 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[ContentAbstract], [t].[LastModified], [t].[Title], [t0].[PostId], [t0].[CategoryId], [t0].[Id], [t0].[Name], [t0].[Note]
+FROM (
+    SELECT [p].[Id], [p].[Content], [p].[ContentAbstract], [p].[LastModified], [p].[Title]
+    FROM [Posts] AS [p]
+    ORDER BY [p].[LastModified] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [p0].[PostId], [p0].[CategoryId], [c].[Id], [c].[Name], [c].[Note]
+    FROM [PostCategories] AS [p0]
+    INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+) AS [t0] ON [t].[Id] = [t0].[PostId]
+ORDER BY [t].[LastModified] DESC, [t].[Id], [t0].[PostId], [t0].[CategoryId], [t0].[Id]
+2020-11-26 21:14:26.188 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-26 21:14:26.232 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 1733.5285ms
+2020-11-26 21:14:26.236 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-26 21:14:26.239 +08:00 [INF] Generating expiration headers.
+2020-11-26 21:14:26.241 +08:00 [INF] Expiration headers generated. Expires: Thu, 26 Nov 2020 13:15:26 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-26 21:14:26.248 +08:00 [INF] Generating Validation headers.
+2020-11-26 21:14:26.257 +08:00 [INF] Validation headers generated. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8". Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT
+2020-11-26 21:14:26.260 +08:00 [INF] Generating Vary header.
+2020-11-26 21:14:26.264 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-26 21:14:26.279 +08:00 [INF] Request finished in 11659.7408ms 200 application/json; charset=utf-8
+2020-11-26 21:15:25.551 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/categories  
+2020-11-26 21:15:25.555 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:15:25.557 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-26 21:15:25.559 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-26 21:15:25.563 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-26 21:15:25.565 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-26 21:15:25.567 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-26 21:15:25.572 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi)'
+2020-11-26 21:15:25.581 +08:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller Blog.APi.Controllers.CategoryController (Blog.APi).
+2020-11-26 21:15:25.619 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-26 21:15:25.633 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[Note]
+FROM [Categories] AS [c]
+2020-11-26 21:15:25.639 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Core.Entities.Category, Blog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-26 21:15:25.644 +08:00 [INF] Executed action Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi) in 58.0033ms
+2020-11-26 21:15:25.647 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi)'
+2020-11-26 21:15:25.649 +08:00 [INF] Generating expiration headers.
+2020-11-26 21:15:25.652 +08:00 [INF] Expiration headers generated. Expires: Thu, 26 Nov 2020 13:16:25 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-26 21:15:25.654 +08:00 [INF] Generating Validation headers.
+2020-11-26 21:15:25.656 +08:00 [INF] Validation headers generated. ETag: Strong, "D873497E17E837C56731E10BB2DA1875". Last-Modified: Thu, 26 Nov 2020 13:15:25 GMT
+2020-11-26 21:15:25.659 +08:00 [INF] Generating Vary header.
+2020-11-26 21:15:25.660 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-26 21:15:25.663 +08:00 [INF] Request finished in 112.816ms 200 application/json; charset=utf-8
+2020-11-26 21:20:24.968 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:20:24.973 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:20:24.976 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:20:24.979 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:20:24.982 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:20:24.984 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:20:24.988 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:20:24.991 +08:00 [INF] Request finished in 23.4234ms 304 
+2020-11-26 21:21:36.207 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:21:36.212 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:21:36.215 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:21:36.218 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:21:36.220 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:21:36.222 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:21:36.224 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:21:36.228 +08:00 [INF] Request finished in 21.1616ms 304 
+2020-11-26 21:22:20.845 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:22:20.848 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:22:20.849 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-26 21:22:20.851 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-26 21:22:20.853 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-26 21:22:20.854 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-26 21:22:20.856 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-26 21:22:20.864 +08:00 [INF] Successfully validated the token.
+2020-11-26 21:22:20.866 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi)'
+2020-11-26 21:22:20.869 +08:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller Blog.APi.Controllers.CategoryController (Blog.APi).
+2020-11-26 21:22:20.888 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-26 21:22:20.902 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[Note]
+FROM [Categories] AS [c]
+2020-11-26 21:22:20.915 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Core.Entities.Category, Blog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-26 21:22:20.919 +08:00 [INF] Executed action Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi) in 46.2006ms
+2020-11-26 21:22:20.921 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi)'
+2020-11-26 21:22:20.927 +08:00 [INF] Generating expiration headers.
+2020-11-26 21:22:20.931 +08:00 [INF] Expiration headers generated. Expires: Thu, 26 Nov 2020 13:23:20 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-26 21:22:20.932 +08:00 [INF] Generating Validation headers.
+2020-11-26 21:22:20.934 +08:00 [INF] Validation headers generated. ETag: Strong, "753D278B181149F1F5A0C111649BAA44". Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT
+2020-11-26 21:22:20.936 +08:00 [INF] Generating Vary header.
+2020-11-26 21:22:20.937 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-26 21:22:20.940 +08:00 [INF] Request finished in 95.013ms 200 application/json; charset=utf-8
+2020-11-26 21:22:36.500 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:22:36.504 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:22:36.515 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:22:36.517 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:22:36.519 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:22:36.521 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:22:36.523 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:22:36.526 +08:00 [INF] Request finished in 25.7824ms 304 
+2020-11-26 21:23:21.503 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:23:21.513 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:23:21.515 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:23:21.518 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:23:21.519 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:23:21.521 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:23:21.522 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:23:21.525 +08:00 [INF] Request finished in 22.656ms 304 
+2020-11-26 21:23:35.742 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:23:35.747 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:23:35.749 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:23:35.750 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:23:35.752 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:23:35.754 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:23:35.755 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:23:35.759 +08:00 [INF] Request finished in 17.4613ms 304 
+2020-11-26 21:24:22.577 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:24:22.617 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:24:22.619 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:24:22.621 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:24:22.622 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:24:22.637 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:24:22.638 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:24:22.643 +08:00 [INF] Request finished in 65.2915ms 304 
+2020-11-26 21:24:46.644 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:24:46.648 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:24:46.649 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:24:46.651 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:24:46.652 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:24:46.653 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:24:46.655 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:24:46.658 +08:00 [INF] Request finished in 14.3487ms 304 
+2020-11-26 21:25:30.702 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:25:30.704 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:25:30.706 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:25:30.707 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:25:30.709 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:25:30.710 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:25:30.712 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:25:30.716 +08:00 [INF] Request finished in 13.6032ms 304 
+2020-11-26 21:25:56.286 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:25:56.291 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:25:56.294 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:25:56.295 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:25:56.297 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:25:56.300 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:25:56.302 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:25:56.304 +08:00 [INF] Request finished in 18.5758ms 304 
+2020-11-26 21:26:30.612 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:26:30.619 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:26:30.624 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:26:30.625 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:26:30.627 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:26:30.629 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:26:30.630 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:26:30.634 +08:00 [INF] Request finished in 21.033ms 304 
+2020-11-26 21:27:41.739 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:27:41.742 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:27:41.745 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:27:41.746 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:27:41.748 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:27:41.749 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:27:41.751 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:27:41.752 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:27:41.754 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:27:41.755 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:27:41.756 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:27:41.758 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:27:41.761 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:27:41.762 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:27:41.764 +08:00 [INF] Request finished in 24.6483ms 304 
+2020-11-26 21:27:41.767 +08:00 [INF] Request finished in 24.7398ms 304 
+2020-11-26 21:36:02.709 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:36:02.712 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:36:02.713 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:36:02.714 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:36:02.716 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:36:02.717 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:36:02.718 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:36:02.721 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:36:02.723 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:36:02.724 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:36:02.725 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:36:02.727 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:36:02.728 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:36:02.731 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:36:02.735 +08:00 [INF] Request finished in 25.4196ms 304 
+2020-11-26 21:36:02.736 +08:00 [INF] Request finished in 24.5585ms 304 
+2020-11-26 21:38:44.671 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:38:44.673 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:38:44.675 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:38:44.676 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:38:44.678 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:38:44.680 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:38:44.683 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:38:44.686 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:38:44.687 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:38:44.689 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:38:44.691 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:38:44.694 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:38:44.695 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:38:44.696 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:38:44.699 +08:00 [INF] Request finished in 28.2499ms 304 
+2020-11-26 21:38:44.702 +08:00 [INF] Request finished in 28.5415ms 304 
+2020-11-26 21:41:45.103 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:41:45.105 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:41:45.107 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:41:45.108 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:41:45.109 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:41:45.111 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:41:45.112 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:41:45.114 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:41:45.116 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:41:45.117 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:41:45.119 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:41:45.120 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:41:45.122 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:41:45.123 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:41:45.126 +08:00 [INF] Request finished in 23.1007ms 304 
+2020-11-26 21:41:45.128 +08:00 [INF] Request finished in 22.3137ms 304 
+2020-11-26 21:45:11.618 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:45:11.620 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:45:11.621 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:45:11.623 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:45:11.624 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:45:11.625 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:45:11.627 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:45:11.629 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:45:11.630 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:45:11.631 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:45:11.632 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:45:11.634 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:45:11.636 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:45:11.638 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:45:11.640 +08:00 [INF] Request finished in 21.7329ms 304 
+2020-11-26 21:45:11.641 +08:00 [INF] Request finished in 21.0054ms 304 
+2020-11-26 21:47:00.416 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:47:00.418 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:47:00.420 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:47:00.421 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:47:00.422 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:47:00.423 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:47:00.424 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:47:00.425 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:47:00.427 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:47:00.429 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:47:00.430 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:47:00.434 +08:00 [INF] Request finished in 17.6321ms 304 
+2020-11-26 21:47:00.436 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:47:00.438 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:47:00.440 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:47:00.442 +08:00 [INF] Request finished in 19.2173ms 304 
+2020-11-26 21:48:16.863 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:48:16.866 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:48:16.869 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:48:16.870 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:48:16.871 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:48:16.873 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:48:16.875 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:48:16.876 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:48:16.878 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:48:16.879 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:48:16.880 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:48:16.882 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:48:16.884 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:48:16.885 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:48:16.887 +08:00 [INF] Request finished in 24.2554ms 304 
+2020-11-26 21:48:16.889 +08:00 [INF] Request finished in 23.1845ms 304 
+2020-11-26 21:50:56.209 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:50:56.213 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:50:56.214 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:50:56.215 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:50:56.216 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:50:56.218 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:50:56.219 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:50:56.221 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:50:56.223 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:50:56.224 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:50:56.225 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:50:56.226 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:50:56.228 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:14:26 GMT.
+2020-11-26 21:50:56.229 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:22:20 GMT.
+2020-11-26 21:50:56.231 +08:00 [INF] Request finished in 22.0225ms 304 
+2020-11-26 21:50:56.234 +08:00 [INF] Request finished in 20.4546ms 304 
+2020-11-26 21:52:24.100 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:52:24.102 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:52:24.102 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:52:24.104 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:52:24.106 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-26 21:52:24.108 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-26 21:52:24.109 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-26 21:52:24.111 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-26 21:52:24.113 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-26 21:52:24.115 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-26 21:52:24.116 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-26 21:52:24.118 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-26 21:52:24.120 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-26 21:52:24.122 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-26 21:52:24.127 +08:00 [INF] Successfully validated the token.
+2020-11-26 21:52:24.127 +08:00 [INF] Successfully validated the token.
+2020-11-26 21:52:24.130 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi)'
+2020-11-26 21:52:24.132 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-26 21:52:24.135 +08:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller Blog.APi.Controllers.CategoryController (Blog.APi).
+2020-11-26 21:52:24.137 +08:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPosts(Blog.Core.Entities.PostResourceParameters) on controller Blog.APi.Controllers.PostController (Blog.APi).
+2020-11-26 21:52:24.144 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-26 21:52:24.154 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-26 21:52:24.164 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[Note]
+FROM [Categories] AS [c]
+2020-11-26 21:52:24.173 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Core.Entities.Category, Blog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-26 21:52:24.176 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM (
+    SELECT [p].[Id], [p].[Content], [p].[ContentAbstract], [p].[LastModified], [p].[Title]
+    FROM [Posts] AS [p]
+    ORDER BY [p].[LastModified] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+2020-11-26 21:52:24.178 +08:00 [INF] Executed action Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi) in 36.5551ms
+2020-11-26 21:52:24.189 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi)'
+2020-11-26 21:52:24.190 +08:00 [INF] Generating expiration headers.
+2020-11-26 21:52:24.191 +08:00 [INF] Expiration headers generated. Expires: Thu, 26 Nov 2020 13:53:24 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-26 21:52:24.194 +08:00 [INF] Generating Validation headers.
+2020-11-26 21:52:24.200 +08:00 [INF] Validation headers generated. ETag: Strong, "753D278B181149F1F5A0C111649BAA44". Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT
+2020-11-26 21:52:24.201 +08:00 [INF] Generating Vary header.
+2020-11-26 21:52:24.202 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-26 21:52:24.204 +08:00 [INF] Request finished in 104.5008ms 200 application/json; charset=utf-8
+2020-11-26 21:52:24.206 +08:00 [INF] Executed DbCommand (21ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[ContentAbstract], [t].[LastModified], [t].[Title], [t0].[PostId], [t0].[CategoryId], [t0].[Id], [t0].[Name], [t0].[Note]
+FROM (
+    SELECT [p].[Id], [p].[Content], [p].[ContentAbstract], [p].[LastModified], [p].[Title]
+    FROM [Posts] AS [p]
+    ORDER BY [p].[LastModified] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [p0].[PostId], [p0].[CategoryId], [c].[Id], [c].[Name], [c].[Note]
+    FROM [PostCategories] AS [p0]
+    INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+) AS [t0] ON [t].[Id] = [t0].[PostId]
+ORDER BY [t].[LastModified] DESC, [t].[Id], [t0].[PostId], [t0].[CategoryId], [t0].[Id]
+2020-11-26 21:52:24.220 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-26 21:52:24.223 +08:00 [INF] Executed action Blog.APi.Controllers.PostController.GetPosts (Blog.APi) in 74.6157ms
+2020-11-26 21:52:24.227 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.PostController.GetPosts (Blog.APi)'
+2020-11-26 21:52:24.230 +08:00 [INF] Generating expiration headers.
+2020-11-26 21:52:24.237 +08:00 [INF] Expiration headers generated. Expires: Thu, 26 Nov 2020 13:53:24 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-26 21:52:24.238 +08:00 [INF] Generating Validation headers.
+2020-11-26 21:52:24.240 +08:00 [INF] Validation headers generated. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8". Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT
+2020-11-26 21:52:24.241 +08:00 [INF] Generating Vary header.
+2020-11-26 21:52:24.242 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-26 21:52:24.244 +08:00 [INF] Request finished in 141.725ms 200 application/json; charset=utf-8
+2020-11-26 21:56:31.631 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:56:31.634 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:56:31.639 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:56:31.640 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:56:31.641 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:56:31.642 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:56:31.643 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:56:31.645 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:56:31.648 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:56:31.649 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:56:31.650 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:56:31.651 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:56:31.653 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 21:56:31.655 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 21:56:31.659 +08:00 [INF] Request finished in 27.5724ms 304 
+2020-11-26 21:56:31.661 +08:00 [INF] Request finished in 26.7706ms 304 
+2020-11-26 21:58:36.817 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:58:36.819 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:58:36.820 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:58:36.823 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:58:36.826 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:58:36.829 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:58:36.832 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:58:36.833 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:58:36.835 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:58:36.838 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:58:36.841 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:58:36.844 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:58:36.846 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 21:58:36.849 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 21:58:36.852 +08:00 [INF] Request finished in 34.8437ms 304 
+2020-11-26 21:58:36.855 +08:00 [INF] Request finished in 35.6037ms 304 
+2020-11-26 21:59:42.394 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 21:59:42.397 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 21:59:42.405 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:59:42.407 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 21:59:42.408 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:59:42.409 +08:00 [INF] Checking If-None-Match.
+2020-11-26 21:59:42.410 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:59:42.412 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:59:42.418 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 21:59:42.421 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 21:59:42.423 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:59:42.425 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 21:59:42.427 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 21:59:42.428 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 21:59:42.430 +08:00 [INF] Request finished in 35.8527ms 304 
+2020-11-26 21:59:42.433 +08:00 [INF] Request finished in 35.8449ms 304 
+2020-11-26 22:01:18.786 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 22:01:18.790 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:01:18.792 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:01:18.797 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:01:18.797 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:01:18.800 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:01:18.801 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:01:18.802 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:01:18.804 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:01:18.805 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:01:18.808 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:01:18.812 +08:00 [INF] Request finished in 26.2848ms 304 
+2020-11-26 22:01:18.818 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:01:18.824 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:01:18.825 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:01:18.827 +08:00 [INF] Request finished in 30.1721ms 304 
+2020-11-26 22:03:16.977 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 22:03:16.977 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:03:16.981 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:03:16.982 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:03:16.984 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:03:16.985 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:03:16.986 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:03:16.989 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:03:16.991 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:03:16.993 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:03:16.994 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:03:16.995 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:03:16.999 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:03:17.000 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:03:17.002 +08:00 [INF] Request finished in 25.2995ms 304 
+2020-11-26 22:03:17.004 +08:00 [INF] Request finished in 26.5054ms 304 
+2020-11-26 22:05:30.590 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 22:05:30.592 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:05:30.593 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:05:30.594 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:05:30.596 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:05:30.597 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:05:30.599 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:05:30.601 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:05:30.602 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:05:30.604 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:05:30.605 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:05:30.607 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:05:30.608 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:05:30.610 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:05:30.613 +08:00 [INF] Request finished in 22.9366ms 304 
+2020-11-26 22:05:30.615 +08:00 [INF] Request finished in 23.401ms 304 
+2020-11-26 22:08:43.851 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 22:08:43.852 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:08:43.854 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:08:43.856 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:08:43.858 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:08:43.861 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:08:43.865 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:08:43.867 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:08:43.869 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:08:43.872 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:08:43.875 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:08:43.877 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:08:43.879 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:08:43.882 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:08:43.885 +08:00 [INF] Request finished in 34.3616ms 304 
+2020-11-26 22:08:43.888 +08:00 [INF] Request finished in 35.9375ms 304 
+2020-11-26 22:09:45.793 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 22:09:45.795 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:09:45.797 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:09:45.798 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:09:45.799 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:09:45.801 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:09:45.802 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:09:45.804 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:09:45.806 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:09:45.807 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:09:45.808 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:09:45.810 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:09:45.811 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:09:45.813 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:09:45.815 +08:00 [INF] Request finished in 21.5025ms 304 
+2020-11-26 22:09:45.817 +08:00 [INF] Request finished in 21.4669ms 304 
+2020-11-26 22:17:57.456 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:17:57.458 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 22:17:57.460 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:17:57.464 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:17:57.467 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:17:57.469 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:17:57.471 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:17:57.473 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:17:57.476 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:17:57.478 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:17:57.480 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:17:57.481 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:17:57.483 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:17:57.485 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:17:57.487 +08:00 [INF] Request finished in 30.4858ms 304 
+2020-11-26 22:17:57.489 +08:00 [INF] Request finished in 30.6094ms 304 
+2020-11-26 22:20:58.769 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:20:58.772 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:20:58.774 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:20:58.775 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:20:58.777 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 22:20:58.778 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:20:58.781 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:20:58.782 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:20:58.784 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:20:58.785 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:20:58.786 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:20:58.789 +08:00 [INF] Request finished in 19.2081ms 304 
+2020-11-26 22:20:58.791 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:20:58.794 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:20:58.795 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:20:58.797 +08:00 [INF] Request finished in 20.053ms 304 
+2020-11-26 22:22:14.427 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:22:14.429 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:22:14.432 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:22:14.433 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:22:14.435 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:22:14.437 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:22:14.440 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:22:14.443 +08:00 [INF] Request finished in 15.467ms 304 
+2020-11-26 22:22:14.448 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 22:22:14.451 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:22:14.453 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:22:14.455 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:22:14.456 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:22:14.459 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:22:14.461 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:22:14.464 +08:00 [INF] Request finished in 15.8001ms 304 
+2020-11-26 22:32:06.830 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:32:06.832 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:32:06.835 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:32:06.838 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:32:06.842 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:32:06.845 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 22:32:06.845 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:32:06.848 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:32:06.849 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:32:06.852 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:32:06.856 +08:00 [INF] Request finished in 26.3596ms 304 
+2020-11-26 22:32:06.857 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:32:06.861 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:32:06.863 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:32:06.865 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:32:06.867 +08:00 [INF] Request finished in 21.5034ms 304 
+2020-11-26 22:33:18.057 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:33:18.060 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:33:18.062 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:33:18.064 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:33:18.065 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:33:18.066 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:33:18.069 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:33:18.071 +08:00 [INF] Request finished in 13.9787ms 304 
+2020-11-26 22:33:18.127 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/posts?orderBy=LastModified%20desc&pageSize=10&pageIndex=1  
+2020-11-26 22:33:18.128 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:33:18.130 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:33:18.132 +08:00 [INF] Checking If-None-Match: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:33:18.133 +08:00 [INF] ETag valid: "7ADAFBD5B87E434F5753FA8B19578EC8".
+2020-11-26 22:33:18.134 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:33:18.136 +08:00 [INF] Generation done. ETag: Strong, "7ADAFBD5B87E434F5753FA8B19578EC8", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:33:18.138 +08:00 [INF] Request finished in 11.7463ms 304 
+2020-11-26 22:36:41.501 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:36:41.503 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:36:41.505 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:36:41.507 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:36:41.510 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:36:41.512 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:36:41.516 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:36:41.522 +08:00 [INF] Request finished in 21.2205ms 304 
+2020-11-26 22:49:39.917 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:49:39.949 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:49:39.951 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:49:39.952 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:49:39.953 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:49:39.954 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:49:39.956 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:49:39.959 +08:00 [INF] Request finished in 42.3042ms 304 
+2020-11-26 22:50:51.615 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:50:51.618 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:50:51.621 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:50:51.623 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:50:51.625 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:50:51.627 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:50:51.630 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:50:51.632 +08:00 [INF] Request finished in 16.3756ms 304 
+2020-11-26 22:52:14.661 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:52:14.668 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:52:14.677 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:52:14.679 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:52:14.681 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:52:14.682 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:52:14.685 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:52:14.687 +08:00 [INF] Request finished in 25.6624ms 304 
+2020-11-26 22:53:14.525 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:53:14.528 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:53:14.530 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:53:14.532 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:53:14.533 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:53:14.534 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:53:14.537 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:53:14.540 +08:00 [INF] Request finished in 14.2472ms 304 
+2020-11-26 22:55:18.138 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:55:18.140 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:55:18.149 +08:00 [INF] Checking If-None-Match.
+2020-11-26 22:55:18.152 +08:00 [INF] Checking If-None-Match: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:55:18.154 +08:00 [INF] ETag valid: "753D278B181149F1F5A0C111649BAA44".
+2020-11-26 22:55:18.156 +08:00 [INF] Generating 304 - Not Modified.
+2020-11-26 22:55:18.158 +08:00 [INF] Generation done. ETag: Strong, "753D278B181149F1F5A0C111649BAA44", Last-Modified: Thu, 26 Nov 2020 13:52:24 GMT.
+2020-11-26 22:55:18.173 +08:00 [INF] Request finished in 35.2826ms 0 
+2020-11-26 22:55:19.449 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:4200/api/categories  
+2020-11-26 22:55:19.451 +08:00 [INF] Checking for conditional GET/HEAD.
+2020-11-26 22:55:19.456 +08:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2020-11-26 22:55:19.464 +08:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2020-11-26 22:55:19.469 +08:00 [INF] Checking for conditional PUT/PATCH.
+2020-11-26 22:55:19.472 +08:00 [INF] Not valid - method isn't PUT or PATCH.
+2020-11-26 22:55:19.476 +08:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2020-11-26 22:55:19.491 +08:00 [INF] Executing endpoint 'Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi)'
+2020-11-26 22:55:19.499 +08:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller Blog.APi.Controllers.CategoryController (Blog.APi).
+2020-11-26 22:55:19.516 +08:00 [INF] Entity Framework Core 3.1.10 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-11-26 22:55:19.541 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[Note]
+FROM [Categories] AS [c]
+2020-11-26 22:55:19.554 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Core.Entities.Category, Blog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-26 22:55:19.561 +08:00 [INF] Executed action Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi) in 55.6819ms
+2020-11-26 22:55:19.564 +08:00 [INF] Executed endpoint 'Blog.APi.Controllers.CategoryController.GetCategories (Blog.APi)'
+2020-11-26 22:55:19.567 +08:00 [INF] Generating expiration headers.
+2020-11-26 22:55:19.569 +08:00 [INF] Expiration headers generated. Expires: Thu, 26 Nov 2020 14:56:19 GMT. Cache-Control: private,max-age=60,must-revalidate.
+2020-11-26 22:55:19.574 +08:00 [INF] Generating Validation headers.
+2020-11-26 22:55:19.576 +08:00 [INF] Validation headers generated. ETag: Strong, "753D278B181149F1F5A0C111649BAA44". Last-Modified: Thu, 26 Nov 2020 14:55:19 GMT
+2020-11-26 22:55:19.578 +08:00 [INF] Generating Vary header.
+2020-11-26 22:55:19.580 +08:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2020-11-26 22:55:19.582 +08:00 [INF] Request finished in 133.4696ms 200 application/json; charset=utf-8

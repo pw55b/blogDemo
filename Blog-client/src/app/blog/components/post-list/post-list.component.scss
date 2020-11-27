@@ -1,0 +1,92 @@
+p {
+  margin: 0;
+}
+
+.ant-list-item-meta-title>a {
+  font-size: 28px;
+}
+
+// article{
+//   display: flex;
+//   flex-direction: column;
+// }
+// .t{
+//   // overflow: hidden;
+//   // text-overflow: ellipsis;
+//   // display: -webkit-box;
+//   // -webkit-line-clamp: 4;
+//   // -webkit-box-orient: vertical;
+//   // line-height: 24px;
+//   word-break: break-all;
+//   word-wrap: break-word;
+// }
+.ant-list-item {
+  // height: 200px;
+  max-height: 300px;
+   word-break: break-all;
+   display: -webkit-box;
+  // /**对象作为伸缩盒子模型展示**/
+   -webkit-box-orient: vertical;
+  // /**设置或检索伸缩盒子对象的子元素的排列方式**/
+  // -webkit-line-clamp: 5;
+  // /**显示的行数**/
+  // overflow: hidden;
+  /**隐藏超出的内容**/
+}
+
+.ant-list-item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.ant-menu-submenu {
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+
+// .ant-menu-item{
+//   border-top: 1px solid  rgba(0,0,0,.1);;
+//   margin-bottom:0px;
+// }
+.ant-menu-item-group-title {
+  padding: 0px 0px !important;
+}
+.card{
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+.card-header:first-child {
+  border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+  border-bottom: none;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,.03);
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: .75rem 1.25rem;
+  background-color: #fff;
+  border-top: 1px solid rgba(0,0,0,.125);
+  width: 100%;
+  color: #495057;
+  text-align: inherit;
+}
+.list-group-item:hover {
+  z-index: 1;
+  color: #495057;
+  text-decoration: none;
+  background-color: #f8f9fa;
+}

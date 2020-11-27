@@ -1,0 +1,23 @@
+<div *ngIf="post">
+
+  <h1>{{post.title}}</h1>
+  <div class="category">
+    <span>{{post.lastModified | date:'yyyy年MM月dd日'}}</span>
+    <br>
+    <nz-tag nzColor="#55acee" *ngFor="let item of post.categories">
+      <i nz-icon nzType="calendar"></i>
+      {{item.name}}
+    </nz-tag>
+  </div>
+
+  <section>
+    <div [innerHTML]="post.content | safeHtml"></div>
+  </section>
+
+  <div>
+
+    <!-- <a mat-button [routerLink]="['/blog/edit-post', post.id]" color="primary"
+      *ngIf='openIdConnectService.userAvailable'>Edit</a> -->
+  </div>
+  <button nz-button nzType="primary" [routerLink]="['/blog/post-edit', post.id]" *ngIf='openIdConnectService.userAvailable'>编辑</button>
+</div>

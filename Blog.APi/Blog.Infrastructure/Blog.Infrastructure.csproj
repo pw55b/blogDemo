@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201121114014_Initial.cs" />
+    <Compile Remove="Migrations\20201121114014_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20201125133654_addMiddletable.cs" />
+    <Compile Remove="Migrations\20201125133654_addMiddletable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
+    <PackageReference Include="NUglify" Version="1.11.1" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.Core\Blog.Core.csproj" />
+  </ItemGroup>
+
+</Project>

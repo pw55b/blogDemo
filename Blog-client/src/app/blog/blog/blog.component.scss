@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcg72j00.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+//博客名
+.name {
+  width: 120px;
+  height: 31px;
+  // background: rgba(255, 255, 255, 0.2);
+  font-size: 25px;
+  color: white;
+  margin: 10.5px 24px 10.5px 0;
+  line-height: 31px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0px auto;
+}
+
+.menu {
+  flex-grow: 2;
+}
+
+@media (max-width: 992px) {
+  .name {
+    width: 100%;
+    padding-left: 30px;
+  }
+
+  .menu {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #header {
+    height: 400px;
+    max-height: 100%;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 0px;
+  }
+
+  #searchbox {
+    width: 100%;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media(min-width:1200px) {
+
+  .inner-content,
+  .wrapper {
+    max-width: 1176px;
+  }
+}
+
+.ant-layout-header {
+  height: 52px;
+  padding: 0 0px;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 52px;
+  background: #001529;
+}
+
+[nz-menu] {
+  line-height: 52px;
+}
+
+.phoneMenu {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.ant-layout-content{
+background-color: #FFFFFF;
+}
+
+// nz-content {
+//   padding: 0 50px;
+// }
+
+nz-footer {
+  text-align: center;
+}
+
+.inner-content {
+  background: #fff;
+  padding: 24px 0px;
+  min-height: 280px;
+  margin: 0px auto;
+}
+
+.search {
+  margin: 0px auto;
+  // background-color: #d9d9d9;
+  // border: 0px;
+}
+
+#searchbox {
+  display: flex;
+
+}
+#signOut{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+#write{
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+}
+// .ant-layout-header{
+//   background-color: #2a579a;
+// }
+// .header{
+//   background-color: #2a579a;
+// }
+// .search:hover{
+//   background-color: white;
+//   border: 1px solid white;
+//   color: black;
+// }
+
+// .ant-input:hover{
+//   border: 1px solid #d9d9d9;
+// }
+#layout{
+  min-height: 100%;
+}
+.card{
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+.card-header:first-child {
+  border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+  border-bottom: none;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,.03);
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: .75rem 1.25rem;
+  background-color: #fff;
+  border-top: 1px solid rgba(0,0,0,.125);
+  width: 100%;
+  color: #495057;
+  text-align: inherit;
+}
+.list-group-item:hover {
+  z-index: 1;
+  color: #495057;
+  text-decoration: none;
+  background-color: #f8f9fa;
+}
